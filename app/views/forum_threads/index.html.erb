@@ -1,0 +1,37 @@
+<h1>Listing forum_threads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>User</th>
+      <th>Real allowed</th>
+      <th>Pseudo allowed</th>
+      <th>Anon allowed</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @forum_threads.each do |forum_thread| %>
+      <tr>
+        <td><%= forum_thread.title %></td>
+        <td><%= forum_thread.body %></td>
+        <td><%= forum_thread.user_id %></td>
+        <td><%= forum_thread.real_allowed %></td>
+        <td><%= forum_thread.pseudo_allowed %></td>
+        <td><%= forum_thread.anon_allowed %></td>
+        <td><%= link_to 'Show', forum_thread %></td>
+        <td><%= link_to 'Edit', edit_forum_thread_path(forum_thread) %></td>
+        <td><%= link_to 'Destroy', forum_thread, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Forum thread', new_forum_thread_path %>

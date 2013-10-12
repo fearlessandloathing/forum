@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131012200202) do
+ActiveRecord::Schema.define(version: 20131012205440) do
+
+  create_table "forum_threads", force: true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "user_id"
+    t.boolean  "real_allowed"
+    t.boolean  "pseudo_allowed"
+    t.boolean  "anon_allowed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", force: true do |t|
     t.string   "name"

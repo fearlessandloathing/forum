@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @forum_thread.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @forum_thread.body %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @forum_thread.user_id %>
+</p>
+
+<p>
+  <strong>Real allowed:</strong>
+  <%= @forum_thread.real_allowed %>
+</p>
+
+<p>
+  <strong>Pseudo allowed:</strong>
+  <%= @forum_thread.pseudo_allowed %>
+</p>
+
+<p>
+  <strong>Anon allowed:</strong>
+  <%= @forum_thread.anon_allowed %>
+</p>
+
+<%= link_to 'Edit', edit_forum_thread_path(@forum_thread) %> |
+<%= link_to 'Back', forum_threads_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  body: MyText
+  user_id: 1
+  real_allowed: false
+  pseudo_allowed: false
+  anon_allowed: false
+
+two:
+  title: MyString
+  body: MyText
+  user_id: 1
+  real_allowed: false
+  pseudo_allowed: false
+  anon_allowed: false
