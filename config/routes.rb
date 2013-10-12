@@ -1,4 +1,6 @@
 Flforum::Application.routes.draw do
+  resources :posts
+
   resources :forum_threads
 
   root :to => "home#index"
