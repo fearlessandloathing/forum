@@ -20,7 +20,7 @@
       <tr>
         <td><%= forum_thread.title %></td>
         <td><%= forum_thread.body %></td>
-        <td><%= forum_thread.user_id %></td>
+        <td><%= ApplicationHelper.user_short_link(self, forum_thread.user, forum_thread.mode) %></td>
         <td><%= forum_thread.real_allowed %></td>
         <td><%= forum_thread.pseudo_allowed %></td>
         <td><%= forum_thread.anon_allowed %></td>
