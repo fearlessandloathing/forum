@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131013023644) do
+ActiveRecord::Schema.define(version: 20131013062900) do
 
   create_table "complaints", force: true do |t|
     t.integer  "user_id"
@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 20131013023644) do
     t.string   "title"
     t.text     "body"
     t.integer  "user_id"
-    t.boolean  "real_allowed"
-    t.boolean  "pseudo_allowed"
-    t.boolean  "anon_allowed"
+    t.boolean  "real_allowed",   default: true
+    t.boolean  "pseudo_allowed", default: true
+    t.boolean  "anon_allowed",   default: true
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "mode"
