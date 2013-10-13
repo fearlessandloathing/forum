@@ -1,6 +1,10 @@
 Flforum::Application.routes.draw do
 
-  resources :forum_threads, path: '' do
+  root :to => "forum_threads#index"
+  devise_for :users, :controllers => {:registrations => "registrations"}
+  resources :users
+
+  resources :forum_threads do
     member do
       get 'complain'
     end
@@ -11,7 +15,4 @@ Flforum::Application.routes.draw do
     end
   end
 
-  root :to => "home#index"
-  devise_for :users, :controllers => {:registrations => "registrations"}
-  resources :users
 end
