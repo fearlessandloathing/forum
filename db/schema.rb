@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131013013252) do
+ActiveRecord::Schema.define(version: 20131013023644) do
+
+  create_table "complaints", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "complainable_id"
+    t.string   "complainable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "forum_threads", force: true do |t|
     t.string   "title"

@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
 
   has_many :forum_threads
   has_many :posts
+  has_many :complaints # I bet they do
 
 end
