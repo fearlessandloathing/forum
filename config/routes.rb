@@ -1,6 +1,6 @@
 Flforum::Application.routes.draw do
 
-  resources :forum_threads do
+  resources :forum_threads, path: '' do
     member do
       get 'complain'
     end
