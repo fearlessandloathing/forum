@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = @forum_thread.posts
   end
 
   # GET /posts/1
@@ -15,7 +15,8 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
-    @post = Post.new
+    @post = @forum_thread.posts.new
+    
   end
 
   # GET /posts/1/edit
@@ -29,7 +30,8 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     puts params.inspect
-    @post = Post.new(post_params)
+    @post = @forum_thread.posts.new(post_params)
+    @post.user = current_user
 
 
     respond_to do |format|

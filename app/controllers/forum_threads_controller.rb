@@ -28,6 +28,7 @@ class ForumThreadsController < ApplicationController
   # POST /forum_threads.json
   def create
     @forum_thread = ForumThread.new(forum_thread_params)
+    @forum_thread.user = current_user
 
     respond_to do |format|
       if @forum_thread.save
