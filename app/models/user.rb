@@ -15,6 +15,12 @@ class User < ActiveRecord::Base
 
   validates_format_of :email, :with => /\w@oberlin\.edu/, :message => "must be an oberlin.edu email"
   validates_format_of :pseudonym, :with => /\A[A-Za-z\d_]+\z/, :message => "should be alphanumeric + _"
-  
+
   validates_length_of :password, :minimum => 6
+
+  def user_params
+    params.require(:user).permit(:email, :name, :pseudonym, :role_ids, :password, :password_confirmation, :current_password)
+  end
+
 end
+
