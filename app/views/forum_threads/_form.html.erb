@@ -35,6 +35,13 @@
     <%= f.label :anon_allowed %><br>
     <%= f.check_box :anon_allowed %>
   </div>
+
+  <div class="field">
+    <%= f.label :mode %>
+    <%= f.select :mode, @forum_thread.modes%>
+  </div>
+  
+
   <div class="actions">
     <%= f.submit %>
   </div>
