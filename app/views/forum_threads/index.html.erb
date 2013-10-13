@@ -9,6 +9,7 @@
       <th>Real allowed</th>
       <th>Pseudo allowed</th>
       <th>Anon allowed</th>
+      <th>Last Updated</th>
       <th></th>
       <th></th>
       <th></th>
@@ -24,6 +25,7 @@
         <td><%= forum_thread.real_allowed %></td>
         <td><%= forum_thread.pseudo_allowed %></td>
         <td><%= forum_thread.anon_allowed %></td>
+        <td><%= time_ago_in_words(forum_thread.updated_at) %></td>
         <td><%= link_to 'Show', forum_thread %></td>
         <td><%= link_to 'Edit', edit_forum_thread_path(forum_thread) %></td>
         <td><%= link_to 'Destroy', forum_thread, method: :delete, data: { confirm: 'Are you sure?' } %></td>
