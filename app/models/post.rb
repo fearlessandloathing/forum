@@ -6,5 +6,12 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :body
 
+  def complain(user)
+    c = Complaint.new
+    c.complainable = self
+    c.user = user
+    r = c.save
+    return c, r
+  end
 end
 

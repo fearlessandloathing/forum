@@ -10,6 +10,7 @@ class Ability
       can :manage, Post, user_id: user.id
       can :read, :all
       can :create, :all
+      can :complain, :all
     end
     # Define abilities for the passed in user here. For example:
     #

@@ -1,7 +1,14 @@
 Flforum::Application.routes.draw do
 
   resources :forum_threads do
-    resources :posts
+    member do
+      get 'complain'
+    end
+    resources :posts do
+      member do
+        get 'complain'
+      end
+    end
   end
 
   root :to => "home#index"

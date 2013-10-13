@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :complain]
   before_action :set_forum_thread
 
   # GET /posts
@@ -74,6 +74,24 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # GET /forum_thread/1/complain
+  def complain
+    if can? :complain, @post
+      complaint, result = @post.complain(current_user)
+
+      respond_to do |format|
+        if result
+          format.html { redirect_to [@forum_thread, @post], notice: "Your complain has been registered"}
+          format.json { head :no_content }
+        else
+          format.html {  redirect_to [@forum_thread, @post], notice: "Your complaint wasn't registered" }
+          format.json { render json: complaint.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+  end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.

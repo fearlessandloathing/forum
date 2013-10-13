@@ -1,5 +1,5 @@
 class ForumThreadsController < ApplicationController
-  before_action :set_forum_thread, only: [:show, :edit, :update, :destroy]
+  before_action :set_forum_thread, only: [:show, :edit, :update, :destroy, :complain]
 
   # GET /forum_threads
   # GET /forum_threads.json
@@ -68,6 +68,23 @@ class ForumThreadsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to forum_threads_url }
       format.json { head :no_content }
+    end
+  end
+
+  # GET /forum_thread/1/complain
+  def complain
+    if can? :complain, @forum_thread
+      complaint, result = @forum_thread.complain(current_user)
+
+      respond_to do |format|
+        if result
+          format.html { redirect_to @forum_thread, notice: "Your complain has been registered"}
+          format.json { head :no_content }
+        else
+          format.html {  redirect_to @forum_thread, notice: "Your complaint wasn't registered" }
+          format.json { render json: complaint.errors, status: :unprocessable_entity }
+        end
+      end
     end
   end
 
