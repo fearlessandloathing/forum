@@ -4,7 +4,7 @@ class ForumThreadsController < ApplicationController
   # GET /forum_threads
   # GET /forum_threads.json
   def index
-    @forum_threads = ForumThread.all
+    @forum_threads = ForumThread.all.order("updated_at DESC")
   end
 
   # GET /forum_threads/1
@@ -28,7 +28,7 @@ class ForumThreadsController < ApplicationController
   # POST /forum_threads.json
   def create
     @forum_thread = ForumThread.new(forum_thread_params)
-    @forum_thread.user = current_user
+    @forum_thread.user_id = current_user.id
 
     respond_to do |format|
       if @forum_thread.save
