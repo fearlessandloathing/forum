@@ -1,7 +1,8 @@
 Flforum::Application.routes.draw do
-  resources :posts
 
-  resources :forum_threads
+  resources :forum_threads do
+    resources :posts
+  end
 
   root :to => "home#index"
   devise_for :users, :controllers => {:registrations => "registrations"}

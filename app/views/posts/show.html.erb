@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to "Back to the thread", @forum_thread %>
+
 <p>
   <strong>Body:</strong>
   <%= @post.body %>
@@ -15,5 +17,5 @@
   <%= @post.mode %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Edit', edit_forum_thread_post_path(@forum_thread, @post) %> |
+<%= link_to 'Back', forum_thread_posts_path(@forum_thread) %>
