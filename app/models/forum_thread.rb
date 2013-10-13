@@ -4,6 +4,11 @@ class ForumThread < ActiveRecord::Base
   has_many :posts
   has_many :complaints, as: :complainable
 
+  validates_presence_of :title
+  validates_presence_of :body
+
+  validates_length_of :title, :maximum => 30
+
   def modes
     modes = []
     modes << "real" if real_allowed
