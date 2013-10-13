@@ -20,6 +20,9 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    if cannot? :update, @post
+      redirect_to :root
+    end
   end
 
   # POST /posts
@@ -41,21 +44,27 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-    respond_to do |format|
-      if @post.update(post_params)
-        format.html { redirect_to [@forum_thread, @post], notice: 'Post was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+    if can? :update, @post
+      respond_to do |format|
+        if @post.update(post_params)
+          format.html { redirect_to [@forum_thread, @post], notice: 'Post was successfully updated.' }
+          format.json { head :no_content }
+        else
+          format.html { render action: 'edit' }
+          format.json { render json: @post.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to :root
     end
   end
 
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    @post.destroy
+    if can? :destroy, @post
+      @post.destroy
+    end
     respond_to do |format|
       format.html { redirect_to forum_thread_posts_path(@forum_thread) }
       format.json { head :no_content }

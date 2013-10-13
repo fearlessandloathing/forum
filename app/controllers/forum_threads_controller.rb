@@ -19,6 +19,9 @@ class ForumThreadsController < ApplicationController
 
   # GET /forum_threads/1/edit
   def edit
+    if cannot? :update, @forum_thread
+      redirect_to :root
+    end
   end
 
   # POST /forum_threads
@@ -40,21 +43,27 @@ class ForumThreadsController < ApplicationController
   # PATCH/PUT /forum_threads/1
   # PATCH/PUT /forum_threads/1.json
   def update
-    respond_to do |format|
-      if @forum_thread.update(forum_thread_params)
-        format.html { redirect_to @forum_thread, notice: 'Forum thread was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @forum_thread.errors, status: :unprocessable_entity }
+    if can? :update, @forum_thread
+      respond_to do |format|
+        if @forum_thread.update(forum_thread_params)
+          format.html { redirect_to @forum_thread, notice: 'Forum thread was successfully updated.' }
+          format.json { head :no_content }
+        else
+          format.html { render action: 'edit' }
+          format.json { render json: @forum_thread.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to :root
     end
   end
 
   # DELETE /forum_threads/1
   # DELETE /forum_threads/1.json
   def destroy
-    @forum_thread.destroy
+    if can? :destroy, @forum_thread
+      @forum_thread.destroy
+    end
     respond_to do |format|
       format.html { redirect_to forum_threads_url }
       format.json { head :no_content }
