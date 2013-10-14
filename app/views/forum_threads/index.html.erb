@@ -1,18 +1,12 @@
 <h1>Listing forum_threads</h1>
 
-<table>
+<table class="table table-bordered table-hover">
   <thead>
     <tr>
       <th>Title</th>
-      <th>Body</th>
       <th>User</th>
-      <th>Real allowed</th>
-      <th>Pseudo allowed</th>
-      <th>Anon allowed</th>
+      <th>Allowed</th>
       <th>Last Updated</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -20,15 +14,23 @@
     <% @forum_threads.each do |forum_thread| %>
       <tr>
         <td><%= forum_thread.title %></td>
-        <td><%= forum_thread.body %></td>
-        <td><%= ApplicationHelper.user_short_link(self, forum_thread.user, forum_thread.mode) %></td>
-        <td><%= forum_thread.real_allowed %></td>
+        <td style="width: 200px"><%= ApplicationHelper.user_short_link(self, forum_thread.user, forum_thread.mode) %></td>
+        <td style="width: 70px">
+          <!-- What posts are allowed, use icon-user, icon-cog, icon-empty-star -->
+          <% if forum_thread.real_allowed %>
+            <i class="icon-user"></i>
+          <% end %>
+          <% if forum_thread.pseudo_allowed %>
+            <i class="icon-cog"></i>
+          <% end %>
+          <% if forum_thread.anon_allowed %>
+            <i class="icon-star-empty"></i>
+          <% end %>
+        </td>
+        <!--<td><%= forum_thread.real_allowed %></td>
         <td><%= forum_thread.pseudo_allowed %></td>
-        <td><%= forum_thread.anon_allowed %></td>
-        <td><%= time_ago_in_words(forum_thread.updated_at) %></td>
-        <td><%= link_to 'Show', forum_thread %></td>
-        <td><%= link_to 'Edit', edit_forum_thread_path(forum_thread) %></td>
-        <td><%= link_to 'Destroy', forum_thread, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= forum_thread.anon_allowed %></td>-->
+        <td style="width: 100px"><%= time_ago_in_words(forum_thread.updated_at) %></td>
       </tr>
     <% end %>
   </tbody>
