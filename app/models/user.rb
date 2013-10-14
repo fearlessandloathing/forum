@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
   validates_presence_of :name
   validates_presence_of :pseudonym
 
+  validates_uniqueness_of :email
+  validates_uniqueness_of :name
+  validates_uniqueness_of :pseudonym
+
   validates_format_of :email, :with => /\w@oberlin\.edu/, :message => "must be an oberlin.edu email"
   validates_format_of :pseudonym, :with => /\A[A-Za-z\d_]+\z/, :message => "should be alphanumeric + _"
 

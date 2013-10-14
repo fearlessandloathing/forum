@@ -16,7 +16,7 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.body %></td>
-        <td><%= post.user_id %></td>
+        <td><%= ApplicationHelper.user_short_link(self, post.user, post.mode) %></td>
         <td><%= post.mode %></td>
         <td><%= link_to 'Show', [@forum_thread, post] %></td>
         <td><%= link_to 'Edit', edit_forum_thread_post_path(@forum_thread, post) %></td>

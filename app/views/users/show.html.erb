@@ -1,3 +1,9 @@
 <h3>User</h3>
 <p>User: <%= @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
+
+<h2>Threads</h2>
+<%= render partial: "forum_threads/small_thread_list", locals: {forum_threads: @user.forum_threads.where(mode: "real") }%>
+
+<h2>Posts</h2>
+<%= render partial: "posts/small_post_list", locals: {posts: @user.posts.where(mode: "real")}%>

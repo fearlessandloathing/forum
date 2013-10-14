@@ -1,0 +1,8 @@
+<h1>User</h1>
+<p>Pseudonym: <%= @user.pseudonym %></p>
+
+<h2>Threads</h2>
+<%= render partial: "forum_threads/small_thread_list", locals: {forum_threads: @user.forum_threads.where(mode: "pseudo") }%>
+
+<h2>Posts</h2>
+<%= render partial: "posts/small_post_list", locals: {posts: @user.posts.where(mode: "pseudo")}%>

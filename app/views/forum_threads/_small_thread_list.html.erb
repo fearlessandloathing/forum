@@ -1,0 +1,20 @@
+
+<table>
+  <thead>
+    <tr>
+      <th>Thread</th>
+      <th>Body</th>
+      <th>Posted</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% forum_threads.each do |thread| %>
+      <tr>
+        <td><%= thread.title %></td>
+        <td><%= truncate thread.body, :length => 30%></td>
+        <td><%= time_ago_in_words thread.updated_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
