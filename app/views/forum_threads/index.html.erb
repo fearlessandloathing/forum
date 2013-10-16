@@ -13,7 +13,7 @@
   <tbody>
     <% @forum_threads.each do |forum_thread| %>
       <tr>
-        <td><%= forum_thread.title %></td>
+        <td><%= link_to forum_thread.title, forum_thread %></td>
         <td style="width: 200px"><%= ApplicationHelper.user_short_link(self, forum_thread.user, forum_thread.mode) %></td>
         <td style="width: 70px">
           <!-- What posts are allowed, use icon-user, icon-cog, icon-empty-star -->
