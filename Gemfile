@@ -34,3 +34,5 @@ group :test do
   gem 'minitest-spec-rails'
   gem 'minitest-wscolor'
 end
+
+gem 'bootstrap_forms'

@@ -1,44 +1,13 @@
-<%= form_for(@forum_thread) do |f| %>
-  <% if @forum_thread.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@forum_thread.errors.count, "error") %> prohibited this forum_thread from being saved:</h2>
 
-      <ul>
-      <% @forum_thread.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </div>
-  <div class="field">
-    <%= f.label :real_allowed %><br>
-    <%= f.check_box :real_allowed %>
-  </div>
-  <div class="field">
-    <%= f.label :pseudo_allowed %><br>
-    <%= f.check_box :pseudo_allowed %>
-  </div>
-  <div class="field">
-    <%= f.label :anon_allowed %><br>
-    <%= f.check_box :anon_allowed %>
-  </div>
-
-  <div class="field">
-    <%= f.label :mode %>
-    <%= f.select :mode, @forum_thread.modes%>
-  </div>
-  
-
-  <div class="actions">
+<%= bootstrap_form_for(@forum_thread, :html => {:class => "form-horizontal"}) do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_area :body, cols: 20, rows: 10 %>
+  <%= f.check_box :real_allowed%>
+  <%= f.check_box :pseudo_allowed%>
+  <%= f.check_box :anon_allowed%>
+  <%= f.select :mode, @forum_thread.modes%>
+  <div class="actions form-actions">
     <%= f.submit %>
   </div>
 <% end %>
+

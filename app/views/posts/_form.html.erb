@@ -1,27 +1,9 @@
-<%= form_for([@forum_thread, @post]) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </div>
-  <div class="field">
-    <%= f.label :mode %>
-    <%= f.select :mode, @forum_thread.modes%>
-  </div>
-  
-
-  <div class="actions">
+<%= bootstrap_form_for([@forum_thread, @post], :html => {:class => "form-horizontal"}) do |f| %>
+  <%= f.text_area :body %>
+  <%= f.select :mode, @forum_thread.modes %>
+  <div class="actions form-actions">
     <%= f.submit %>
   </div>
 <% end %>
+
