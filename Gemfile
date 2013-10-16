@@ -24,10 +24,10 @@ group :development do
   gem 'rb-inotify', :require=>false
 end
 group :production do
-  gem 'sqlite3'
   gem 'puma'
 end
 group :test do
+  gem 'sqlite3'
   gem 'capybara'
   gem 'minitest-spec-rails'
   gem 'minitest-wscolor'
