@@ -24,6 +24,7 @@ group :development do
   gem 'rb-inotify', :require=>false
 end
 group :production do
+  gem 'pg'
   gem 'puma'
 end
 group :test do
