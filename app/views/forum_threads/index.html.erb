@@ -1,6 +1,6 @@
 <h1>Listing forum_threads</h1>
 
-<table class="table table-bordered table-hover">
+<table class="table table-bordered table-hover flforum-table">
   <thead>
     <tr>
       <th>Title</th>
@@ -16,16 +16,7 @@
         <td><%= link_to forum_thread.title, forum_thread %></td>
         <td style="width: 200px"><%= ApplicationHelper.user_short_link(self, forum_thread.user, forum_thread.mode) %></td>
         <td style="width: 70px">
-          <!-- What posts are allowed, use icon-user, icon-cog, icon-empty-star -->
-          <% if forum_thread.real_allowed %>
-            <i class="icon-user"></i>
-          <% end %>
-          <% if forum_thread.pseudo_allowed %>
-            <i class="icon-cog"></i>
-          <% end %>
-          <% if forum_thread.anon_allowed %>
-            <i class="icon-star-empty"></i>
-          <% end %>
+          <%= render partial: "forum_threads/icon_allowed", object: forum_thread%>
         </td>
         <!--<td><%= forum_thread.real_allowed %></td>
         <td><%= forum_thread.pseudo_allowed %></td>
