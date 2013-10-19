@@ -24,5 +24,14 @@ class ForumThread < ActiveRecord::Base
     modes << "anon" if anon_allowed
     return modes
   end
+
+  def as_post
+    post = OpenStruct.new
+    post.user = user
+    post.body = body
+    post.updated_at = updated_at
+    post.mode = mode
+    return post
+  end
 end
 

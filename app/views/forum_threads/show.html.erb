@@ -1,35 +1,35 @@
+<h1><%= @forum_thread.title %></h1>
+<div>
+  <%= render partial: "forum_threads/icon_allowed", object: @forum_thread%>
+</div>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @forum_thread.title %>
-</p>
+<hr>
 
-<p>
-  <strong>Body:</strong>
-  <%= @forum_thread.body %>
-</p>
+<table class="table table-bordered table-hover flforum-table">
+<% @posts.each do |post| %>
+    <tr>
+    <td style="width: 200px">
+      <div>
+        <%= ApplicationHelper.user_short_link(self, post.user, post.mode)%>
+      </div>
+      <div>
+        Updated <%= time_ago_in_words post.updated_at %> ago
+      </div>
+      <div>
+        <%= link_to raw( "<i class='icon-file'></i>" ), [@forum_thread, post] if post.is_a?(Post)%>
+      </div>
+    </td>
 
-<p>
-  <strong>User:</strong>
-  <%= @forum_thread.user_id %>
-</p>
+    <td>
+      <%= post.body %>
+    </td>
+  </tr>
 
-<p>
-  <strong>Real allowed:</strong>
-  <%= @forum_thread.real_allowed %>
-</p>
+<% end %>
+</table>
 
-<p>
-  <strong>Pseudo allowed:</strong>
-  <%= @forum_thread.pseudo_allowed %>
-</p>
-
-<p>
-  <strong>Anon allowed:</strong>
-  <%= @forum_thread.anon_allowed %>
-</p>
-
-<%= link_to 'Posts', forum_thread_posts_path(@forum_thread) %> | 
+<%= link_to 'New Post', new_forum_thread_post_path(@forum_thread) %> |
 <%= link_to 'Edit', edit_forum_thread_path(@forum_thread) %> |
 <%= link_to 'Back', forum_threads_path %>

@@ -10,6 +10,8 @@ class ForumThreadsController < ApplicationController
   # GET /forum_threads/1
   # GET /forum_threads/1.json
   def show
+    @posts = @forum_thread.posts.to_a
+    @posts.unshift(@forum_thread.as_post)
   end
 
   # GET /forum_threads/new
