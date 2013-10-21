@@ -30,6 +30,11 @@
 <% end %>
 </table>
 
+
+<div class="pagination">
+  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+</div>
+
 <%= link_to 'New Post', new_forum_thread_post_path(@forum_thread) %> |
 <%= link_to 'Edit', edit_forum_thread_path(@forum_thread) %> |
 <%= link_to 'Back', forum_threads_path %>

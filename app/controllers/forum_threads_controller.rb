@@ -4,14 +4,15 @@ class ForumThreadsController < ApplicationController
   # GET /forum_threads
   # GET /forum_threads.json
   def index
-    @forum_threads = ForumThread.all.order("updated_at DESC")
+    @forum_threads = ForumThread.all.order("updated_at DESC").page(params[:page])
   end
 
   # GET /forum_threads/1
   # GET /forum_threads/1.json
   def show
-    @posts = @forum_thread.posts.to_a
+    @posts = @forum_thread.posts.page(params[:page]).to_a
     @posts.unshift(@forum_thread.as_post)
+
   end
 
   # GET /forum_threads/new

@@ -5,6 +5,7 @@
     <tr>
       <th>Title</th>
       <th>User</th>
+      <th>Posts</th>
       <th>Allowed</th>
       <th>Last Updated</th>
     </tr>
@@ -15,12 +16,12 @@
       <tr>
         <td><%= link_to forum_thread.title, forum_thread %></td>
         <td style="width: 200px"><%= ApplicationHelper.user_short_link(self, forum_thread.user, forum_thread.mode) %></td>
+        <td style="width: 50px">
+          <%= forum_thread.posts.count %>
+        </td>
         <td style="width: 70px">
           <%= render partial: "forum_threads/icon_allowed", object: forum_thread%>
         </td>
-        <!--<td><%= forum_thread.real_allowed %></td>
-        <td><%= forum_thread.pseudo_allowed %></td>
-        <td><%= forum_thread.anon_allowed %></td>-->
         <td style="width: 100px"><%= time_ago_in_words(forum_thread.updated_at) %></td>
       </tr>
     <% end %>
@@ -28,5 +29,9 @@
 </table>
 
 <br>
+
+<div class="pagination">
+  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+</div>
 
 <%= link_to 'New Forum thread', new_forum_thread_path %>

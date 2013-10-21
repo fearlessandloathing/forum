@@ -5,6 +5,9 @@ class Post < ActiveRecord::Base
   has_many :complaints, as: :complainable
 
   validates_presence_of :body
+  validates_presence_of :mode
+
+  self.per_page = 10
 
   def complain(user)
     c = Complaint.new
