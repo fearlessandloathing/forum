@@ -1,0 +1,37 @@
+<h1>Moderation</h1>
+
+<table class="table table-bordered table-hover flforum-table">
+<% @complainables.each do |complainable, complaints| %>
+    <tr>
+    <td style="width: 200px">
+      <div>
+        <%= ApplicationHelper.user_short_link(self, complainable.user, "real")%>
+        <%= complainable.mode %>
+      </div>
+      <div>
+        Updated <%= time_ago_in_words complainable.updated_at %> ago
+      </div>
+    </td>
+
+    <td>
+      <% if complainable.is_a? Thread %>
+        <h1>
+          <%= complainable.title %>
+        </h1>
+      <% end %>
+      <%= complainable.body %>
+    </td>
+
+    <td style="width: 150px">
+      <ul class="nav nav-pills nav-stacked">
+        <% complaints.each do |complaint| %>
+          <li>
+            <%= ApplicationHelper.user_short_link(self, complaint.user, "real") %>
+          </li>
+        <% end %>
+      </ul>
+    </td>
+  </tr>
+
+<% end %>
+</table>

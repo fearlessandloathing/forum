@@ -5,6 +5,10 @@
 
 <p id="notice"><%= notice %></p>
 
+<% if !current_user.has_complained_on @forum_thread %>
+  <%= link_to raw( "<i class='icon-eye-open'></i>" ), forum_thread_complaint_path(@forum_thread) %>
+<% end %>
+
 <hr>
 
 <table class="table table-bordered table-hover flforum-table">
@@ -20,7 +24,10 @@
       <div>
         <%= link_to raw( "<i class='icon-file'></i>" ), [@forum_thread, post] if post.is_a?(Post)%>
         <%= link_to raw( "<i class='icon-font'></i>" ), edit_forum_thread_post_path(@forum_thread, post) if post.is_a?(Post)%>
-        <%= link_to raw( "<i class=' icon-remove-sign'></i>" ), [@forum_thread, post], method: :delete, data: { confirm: 'Are you sure?' } if post.is_a?(Post)%>
+        <% if !current_user.has_complained_on post %>
+          <%= link_to raw( "<i class='icon-eye-open'></i>" ), forum_thread_post_complaint_path(@forum_thread, post) %>
+        <% end %>
+        <%= link_to raw( "<i class='icon-remove-sign'></i>" ), [@forum_thread, post], method: :delete, data: { confirm: 'Are you sure?' } if post.is_a?(Post)%>
       </div>
     </td>
 

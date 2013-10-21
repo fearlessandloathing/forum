@@ -13,11 +13,19 @@
     <li>
     <%= link_to current_user.name, edit_user_registration_path %>
     </li>
+
     <% if current_user.has_role? :admin %>
       <li>
       <%= link_to 'Admin', users_path %>
       </li>
     <% end %>
+
+    <% if current_user.has_role?(:vip) || current_user.has_role?(:admin) %>
+      <li>
+        <%= link_to 'Moderation', moderation_index_path %>
+      </li>
+    <% end %>
+
   <% else %>
     <li>
     <%= link_to 'Sign up', new_user_registration_path %>

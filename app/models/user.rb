@@ -26,5 +26,9 @@ class User < ActiveRecord::Base
     params.require(:user).permit(:email, :name, :pseudonym, :role_ids, :password, :password_confirmation, :current_password)
   end
 
+  def has_complained_on(thing)
+    self.complaints.where(complainable: thing).count > 0
+  end
+
 end
 
