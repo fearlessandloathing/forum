@@ -19,6 +19,8 @@
       </div>
       <div>
         <%= link_to raw( "<i class='icon-file'></i>" ), [@forum_thread, post] if post.is_a?(Post)%>
+        <%= link_to raw( "<i class='icon-font'></i>" ), edit_forum_thread_post_path(@forum_thread, post) if post.is_a?(Post)%>
+        <%= link_to raw( "<i class=' icon-remove-sign'></i>" ), [@forum_thread, post], method: :delete, data: { confirm: 'Are you sure?' } if post.is_a?(Post)%>
       </div>
     </td>
 
