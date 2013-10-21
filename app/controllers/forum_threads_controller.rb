@@ -11,7 +11,6 @@ class ForumThreadsController < ApplicationController
   # GET /forum_threads/1.json
   def show
     @posts = @forum_thread.posts.page(params[:page]).to_a
-    @posts.unshift(@forum_thread.as_post)
 
   end
 

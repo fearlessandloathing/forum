@@ -9,6 +9,14 @@ class ForumThread < ActiveRecord::Base
 
   validates_length_of :title, :maximum => 30
 
+  after_create do
+    p = posts.new
+    p.user = user
+    p.mode = mode
+    p.body = body
+    p.save!
+  end
+
   self.per_page = 10
 
   def complain(user)
