@@ -75,17 +75,15 @@ class ForumThreadsController < ApplicationController
 
   # GET /forum_thread/1/complain
   def complain
-    if can? :complain, @forum_thread
-      complaint, result = @forum_thread.complain(current_user)
+    complaint, result = @forum_thread.complain(current_user)
 
-      respond_to do |format|
-        if result
-          format.html { redirect_to @forum_thread, notice: "Your complain has been registered"}
-          format.json { head :no_content }
-        else
-          format.html {  redirect_to @forum_thread, notice: "Your complaint wasn't registered" }
-          format.json { render json: complaint.errors, status: :unprocessable_entity }
-        end
+    respond_to do |format|
+      if result
+        format.html { redirect_to @forum_thread, notice: "Your complain has been registered"}
+        format.json { head :no_content }
+      else
+        format.html {  redirect_to @forum_thread, notice: "Your complaint wasn't registered" }
+        format.json { render json: complaint.errors, status: :unprocessable_entity }
       end
     end
   end

@@ -30,5 +30,10 @@ class User < ActiveRecord::Base
     self.complaints.where(complainable: thing).count > 0
   end
 
+  def can_moderate?
+    # TODO: figure out how CanCan works with Rolify and fix this.
+    has_role?(:vip) || has_role?(:admin)
+  end
+
 end
 

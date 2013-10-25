@@ -20,7 +20,7 @@
       </li>
     <% end %>
 
-    <% if current_user.has_role?(:vip) || current_user.has_role?(:admin) %>
+    <% if current_user.can_moderate? %>
       <li>
         <%= link_to 'Moderation', moderation_index_path %>
       </li>
