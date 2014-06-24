@@ -1,6 +1,6 @@
 <h1>Listing forum_threads</h1>
 
-<%= link_to 'New Post', new_forum_thread_path %>
+<%= link_to 'Create New Post', new_forum_thread_path %>
 
 <table class="table table-bordered table-hover flforum-table">
   <thead>
@@ -36,4 +36,4 @@
   <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 </div>
 
-<%= link_to 'New Post', new_forum_thread_path %>
+<%= link_to 'Create New Post', new_forum_thread_path %>
