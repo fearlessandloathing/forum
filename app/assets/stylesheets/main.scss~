@@ -1,0 +1,7 @@
+
+
+@import "../../../vendor/assets/stylesheets/bootstrap/bootstrap.scss";
+
+.flforum-table {
+	color: red;
+}
