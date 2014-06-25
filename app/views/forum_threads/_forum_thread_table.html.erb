@@ -1,0 +1,12 @@
+
+<tr>
+  <td><%= link_to forum_thread_table.title, forum_thread_table %></td>
+  <td style="width: 200px"><%= ApplicationHelper.user_short_link(self, forum_thread_table.user, forum_thread_table.mode) %></td>
+  <td style="width: 50px">
+    <%= forum_thread_table.posts.count %>
+  </td>
+  <td style="width: 70px">
+    <%= render partial: "forum_threads/icon_allowed", object: forum_thread_table%>
+  </td>
+  <td style="width: 100px"><%= time_ago_in_words(forum_thread_table.updated_at) %></td>
+</tr>

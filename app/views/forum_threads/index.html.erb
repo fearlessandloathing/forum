@@ -14,25 +14,13 @@
   </thead>
 
   <tbody>
-    <% @forum_threads.each do |forum_thread| %>
-      <tr>
-        <td><%= link_to forum_thread.title, forum_thread %></td>
-        <td style="width: 200px"><%= ApplicationHelper.user_short_link(self, forum_thread.user, forum_thread.mode) %></td>
-        <td style="width: 50px">
-          <%= forum_thread.posts.count %>
-        </td>
-        <td style="width: 70px">
-          <%= render partial: "forum_threads/icon_allowed", object: forum_thread%>
-        </td>
-        <td style="width: 100px"><%= time_ago_in_words(forum_thread.updated_at) %></td>
-      </tr>
-    <% end %>
+    <%= render partial: "forum_thread_table", collection: @forum_threads %>
   </tbody>
 </table>
 
 <br>
 
-<div class="pagination">
+<div id="pagination">
   <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 </div>
 
