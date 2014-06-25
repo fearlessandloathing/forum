@@ -3,10 +3,13 @@
 </div>
 
 <ul class="nav navbar-nav">
-  
+  <li>
+    <%= link_to 'Create New Post', new_forum_thread_path %>
+  </li>
+
   <% if user_signed_in? %>
     <li>
-    <%= link_to current_user.name, edit_user_registration_path %>
+      <%= link_to current_user.name, edit_user_registration_path %>
     </li>
 
     <% if current_user.has_role? :admin %>
@@ -35,4 +38,6 @@
     <%= link_to 'Login', new_user_session_path %>
     </li>
   <% end %>
+
+
 </ul>
