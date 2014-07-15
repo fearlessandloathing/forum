@@ -1,6 +1,4 @@
-<h1>Forum Posts</h1>
-
-<%= link_to 'Create New Post', new_forum_thread_path %>
+<br>
 
 <div id="posts">
     <%= render partial: "forum_thread_listing", collection: @forum_threads %>
@@ -12,5 +10,3 @@
 <div id="pagination">
   <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 </div>
-
-<%= link_to 'Create New Post', new_forum_thread_path %>
