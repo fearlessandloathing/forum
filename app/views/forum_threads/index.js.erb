@@ -1,4 +1,4 @@
-$('.table tbody').append('<%= j render partial: "forum_thread_table", collection: @forum_threads %>');
+$('#posts').append('<%= j render partial: "forum_thread_listing", collection: @forum_threads %>');
 <% if @forum_threads.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate @forum_threads, renderer: BootstrapPagination::Rails %>');
 <% else %>

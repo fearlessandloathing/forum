@@ -1,0 +1,22 @@
+<div class="post">
+  <div class="panel panel-default">
+    <a href="<%= url_for forum_thread_listing %>">
+        <div class="panel-body">
+          <%= forum_thread_listing.body %>
+        </div>
+    </a>
+    <div class="panel-footer">
+      <%= link_to "Reply", new_forum_thread_post_path(forum_thread_listing)%>
+      to <%= ApplicationHelper.user_short_link(self, forum_thread_listing.user, forum_thread_listing.mode) %>
+    <p class="attributions">Attributions:
+        <img src="assets/real.svg" class="attributionicon" />
+        <img src="assets/pseudo.svg" class="attributionicon" />
+        <img src="assets/anon.svg" class="attributionicon" />
+      </p>
+      <p class="updated">Last Updated: <%= time_ago_in_words(forum_thread_listing.updated_at) %></p>
+      <p class="replies">
+      <%= link_to forum_thread_listing.posts.count.to_s + " Replies", forum_thread_listing %>
+      </p>
+    </div>
+ </div>
+</div>

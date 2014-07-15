@@ -1,3 +1,21 @@
 // Place all the styles related to the ForumThreads controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+//
+body {
+	margin-top: 60px;
+}
+.updated {
+	display: inline;
+
+}
+.attributions {
+	display: inline;
+}
+.attributionicon {
+	width: 1em;
+	height: auto;
+}
+.replies {
+	display: inline;
+}

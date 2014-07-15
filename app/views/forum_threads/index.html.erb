@@ -2,21 +2,10 @@
 
 <%= link_to 'Create New Post', new_forum_thread_path %>
 
-<table class="table table-bordered table-hover flforum-table">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Posts</th>
-      <th>Allowed</th>
-      <th>Last Updated</th>
-    </tr>
-  </thead>
+<div id="posts">
+    <%= render partial: "forum_thread_listing", collection: @forum_threads %>
+</div>
 
-  <tbody>
-    <%= render partial: "forum_thread_table", collection: @forum_threads %>
-  </tbody>
-</table>
 
 <br>
 
