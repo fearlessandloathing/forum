@@ -1,4 +1,34 @@
-<h1><%= @forum_thread.title %></h1>
+<br>
+
+<div class="panel panel-default">
+<div class="panel-body">
+    	<p class="lead">Lorem ipsum dolor sit amet, nisl stet vis at, has cu homero hendrerit. Ad sit stet aeterno interesset. His cibo discere et, at his atqui scaevola. Nulla voluptatibus mel ut, ei pro nulla nominati appellantur, et nec primis tincidunt. Vel nostro insolens periculis cu, quo ne diam placerat interesset.</p>
+</div>
+  <div class="panel-footer">
+    <a href="new reply">Reply</a> to <a href="authors posts/replies">David Clark</a>
+	<p class="attributions">Attributions:
+		<img src="../assets/images/real.svg" class="attributionicon" />
+		<img src="pseudo.svg" class="attributionicon" />
+		<img src="anon.svg" class="attributionicon" />
+	</p>
+	<p class="updated">Last Updated: 1 Day</p>
+	<p class="replies"><a href="link to replies">5 Replies</a></p>
+  </div>
+</div>
+</div>
+<div class="reply panel panel-default">
+
+	<div class="panel-body">
+		<p>Blah blah blah body of the reply</p>
+	</div>
+
+	<div class="panel-footer">
+		<a href="to author page">David Clark</a>
+		<p>"posted this (however long ago)" <- inline with author</p>
+	</div>
+</div>
+
+<!--<h1><%= @forum_thread.title %></h1>-->
 <div>
   <%= render partial: "forum_threads/icon_allowed", object: @forum_thread%>
 </div>
