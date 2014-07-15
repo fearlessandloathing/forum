@@ -9,9 +9,9 @@ body {
 }
 
 .highlight {
-	color: red !important;
+	color: black !important;
 	font-size: 2em;
 	&:hover {
-		color: black !important;
+		color: red !important;
 	}
 }
