@@ -7,3 +7,10 @@ $border-radius-small:       0px !default;
 body {
 	margin-top: 30px;
 }
+
+.highlight {
+	color: red !important;
+	font-size: 2em;
+	&:hover {
+		color: black !important;
+}
