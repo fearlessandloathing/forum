@@ -1,0 +1,11 @@
+<div class=" panel panel-default ">
+
+	<div class="panel-body">
+      <p><%= post_listing.body %></p>
+	</div>
+
+	<div class="panel-footer">
+      <%= ApplicationHelper.user_short_link(self, post_listing.user, post_listing.mode) %>
+      posted this <%= time_ago_in_words post_listing.updated_at%>
+	</div>
+</div>
