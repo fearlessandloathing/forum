@@ -1,7 +1,6 @@
 
 <%= bootstrap_form_for(@forum_thread, :html => {:class => "form-horizontal"}) do |f| %>
-  <%= f.text_field :title %>
-  <%= f.text_area :body, cols: 20, rows: 10 %>
+  <%= f.text_area :body, cols: 40, rows: 10 %>
   <%= f.check_box :real_allowed%>
   <%= f.check_box :pseudo_allowed%>
   <%= f.check_box :anon_allowed%>
