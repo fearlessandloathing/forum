@@ -1,47 +1,13 @@
 <br>
 
-<div class="panel panel-default">
-<div class="panel-body">
-    	<p class="lead">Lorem ipsum dolor sit amet, nisl stet vis at, has cu homero hendrerit. Ad sit stet aeterno interesset. His cibo discere et, at his atqui scaevola. Nulla voluptatibus mel ut, ei pro nulla nominati appellantur, et nec primis tincidunt. Vel nostro insolens periculis cu, quo ne diam placerat interesset.</p>
-</div>
-  <div class="panel-footer">
-    <a href="new reply">Reply</a> to <a href="authors posts/replies">David Clark</a>
-	<p class="attributions">Attributions:
-		<img src="../assets/images/real.svg" class="attributionicon" />
-		<img src="pseudo.svg" class="attributionicon" />
-		<img src="anon.svg" class="attributionicon" />
-	</p>
-	<p class="updated">Last Updated: 1 Day</p>
-	<p class="replies"><a href="link to replies">5 Replies</a></p>
-  </div>
-</div>
-</div>
+<%= render partial: "forum_thread_listing", object: @forum_thread %>
+
+<p id="notice"><%= notice %></p>
 
 <div class="col-md-10 col-md-offset-1"><!--replies-->
 
-	<div class=" panel panel-default ">
+  <%= render partial: "posts/post_listing", collection: @posts[1..@posts.length] %>
 
-		<div class="panel-body">
-			<p>Blah blah blah body of the reply</p>
-		</div>
-
-		<div class="panel-footer">
-			<a href="to author page">David Clark</a>
-			<p>"posted this (however long ago)" <- inline with author</p>
-		</div>
-	</div>
-
-	<div class="panel panel-default">
-
-		<div class="panel-body">
-			<p>Yadda yadda yadda body of another reply</p>
-		</div>
-
-		<div class="panel-footer">
-			<a href="to author page">David Clark</a>
-			<p>"posted this (however long ago)" <- inline with author</p>
-		</div>
-	</div>
 </div><!--end replies-->
 
 <!--<h1><%= @forum_thread.title %></h1>-->
@@ -49,41 +15,12 @@
   <%= render partial: "forum_threads/icon_allowed", object: @forum_thread%>
 </div>
 
-<p id="notice"><%= notice %></p>
 
 <% if !current_user.has_complained_on @forum_thread %>
   <%= link_to raw( "<i class='icon-eye-open'></i>" ), forum_thread_complaint_path(@forum_thread) %>
 <% end %>
 
 <hr>
-
-<table class="table table-bordered table-hover flforum-table">
-<% @posts.each do |post| %>
-    <tr>
-    <td style="width: 200px">
-      <div>
-        <%= ApplicationHelper.user_short_link(self, post.user, post.mode)%>
-      </div>
-      <div>
-        Updated <%= time_ago_in_words post.updated_at %> ago
-      </div>
-      <div>
-        <%= link_to raw( "<i class='icon-file'></i>" ), [@forum_thread, post] if post.is_a?(Post)%>
-        <%= link_to raw( "<i class='icon-font'></i>" ), edit_forum_thread_post_path(@forum_thread, post) if post.is_a?(Post)%>
-        <% if !current_user.has_complained_on post %>
-          <%= link_to raw( "<i class='icon-eye-open'></i>" ), forum_thread_post_complaint_path(@forum_thread, post) %>
-        <% end %>
-        <%= link_to raw( "<i class='icon-remove-sign'></i>" ), [@forum_thread, post], method: :delete, data: { confirm: 'Are you sure?' } if post.is_a?(Post)%>
-      </div>
-    </td>
-
-    <td>
-      <%= post.body %>
-    </td>
-  </tr>
-
-<% end %>
-</table>
 
 
 <div class="pagination">
