@@ -19,7 +19,7 @@
         Last Updated: <%= time_ago_in_words(forum_thread_listing.updated_at) %>
       </div>
 
-      <div class="replies">
+      <div class="comments">
         <% posts = forum_thread_listing.posts[1..forum_thread_listing.posts.length]%>
         <%= link_to pluralize(posts.count, "Comment"), forum_thread_listing %>
       </div>
