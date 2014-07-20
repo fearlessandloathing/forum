@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131013062900) do
+ActiveRecord::Schema.define(version: 20140720202629) do
 
   create_table "complaints", force: true do |t|
     t.integer  "user_id"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20131013062900) do
   end
 
   create_table "forum_threads", force: true do |t|
-    t.string   "title"
     t.text     "body"
     t.integer  "user_id"
     t.boolean  "real_allowed",   default: true

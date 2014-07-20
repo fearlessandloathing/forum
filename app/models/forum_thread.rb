@@ -4,10 +4,10 @@ class ForumThread < ActiveRecord::Base
   has_many :posts
   has_many :complaints, as: :complainable
 
-  validates_presence_of :title
+  #validates_presence_of :title
   validates_presence_of :body
 
-  validates_length_of :title, :maximum => 30
+  #validates_length_of :title, :maximum => 30
 
   after_create do
     p = posts.new
