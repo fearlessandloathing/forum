@@ -20,8 +20,8 @@
         Last Updated: <%= time_ago_in_words(forum_thread_listing.updated_at) %>
       </div>
 
-      <div class="replies">
-        <%= link_to forum_thread_listing.posts.count.to_s + " Replies", forum_thread_listing %>
+      <div class="comments">
+        <%= link_to forum_thread_listing.posts.count.to_s + " Comments", forum_thread_listing %>
       </div>
 
       <div class="postID">
