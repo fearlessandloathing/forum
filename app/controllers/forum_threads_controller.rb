@@ -21,6 +21,7 @@ class ForumThreadsController < ApplicationController
 
   # GET /forum_threads/1/edit
   def edit
+    # TODO: add meaningful error message
     if cannot? :update, @forum_thread
       redirect_to :root
     end
