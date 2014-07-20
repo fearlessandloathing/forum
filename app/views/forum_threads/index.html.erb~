@@ -1,0 +1,10 @@
+<div id="posts">
+    <%= render partial: "forum_thread_listing", collection: @forum_threads %>
+</div>
+
+
+<br>
+
+<div id="pagination">
+  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+</div>
