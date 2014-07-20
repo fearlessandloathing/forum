@@ -9,11 +9,13 @@ body {
 	width: auto;
 	display: inline;
 	margin-right: 5%;
+	white-space: nowrap;
 }
 .attributions {
 	width: auto;
 	display: inline;
 	margin-right: 5%;
+	white-space:nowrap;
 }
 .attributionicon {
 	width: 1em;
@@ -23,14 +25,17 @@ body {
 	width: auto;
 	display: inline;
 	margin-right: 5%;
+	white-space:nowrap;
 }
 .replies {
 	width: auto;
 	display: inline;
 	margin-right: 5%;
+	white-space:nowrap;
 }
 .postID {
 	width: auto;
 	float: right;
 	color: #c4c4c4;
+	white-space:nowrap;
 }
