@@ -5,6 +5,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  after_create :assign_default_role
+
+  def assign_default_role
+    add_role(:user)
+  end
+
   has_many :forum_threads
   has_many :posts
   has_many :complaints # I bet they do
