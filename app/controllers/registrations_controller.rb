@@ -30,7 +30,15 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 =end
-  
+
+  def confirm
+
+  end
+
+  def after_inactive_sign_up_path_for(resource)
+    '/users/confirm'
+  end
+
 
   def update_sanitized_params
     devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:name, :pseudonym, :email, :password, :password_confirmation)}

@@ -4,8 +4,12 @@ Flforum::Application.routes.draw do
   get "moderation/index"
   get "pseudonym/show"
   root :to => "forum_threads#index"
+  devise_scope :user do
+    get "/users/confirm", to: "registrations#confirm"
+  end
   devise_for :users, :controllers => {:registrations => "registrations"}
   resources :users
+
 
   get '/pseudo/:pseudonym', to: "pseudonym#show"
 
