@@ -2,15 +2,12 @@
 
 <%= render partial: "forum_thread_listing", object: @forum_thread %>
 
-<p id="notice"><%= notice %></p>
-
 <div class="col-md-10 col-md-offset-1"><!--replies-->
 
   <%= render partial: "posts/post_listing", collection: @posts[1..@posts.length] %>
 
 </div><!--end replies-->
 
-<!--<h1><%= @forum_thread.title %></h1>-->
 <div>
   <%= render partial: "forum_threads/icon_allowed", object: @forum_thread%>
 </div>
@@ -27,6 +24,6 @@
   <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 </div>
 
-<%= link_to 'New Post', new_forum_thread_post_path(@forum_thread) %> |
+<%= link_to 'Reply', new_forum_thread_post_path(@forum_thread) %> |
 <%= link_to 'Edit', edit_forum_thread_path(@forum_thread) %> |
 <%= link_to 'Back', forum_threads_path %>
