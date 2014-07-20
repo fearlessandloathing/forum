@@ -6,20 +6,28 @@
         </div>
     </a>
     <div class="panel-footer">
+
       <div class="author">
         <%= link_to "Reply", new_forum_thread_post_path(forum_thread_listing)%>
         to <%= ApplicationHelper.user_short_link(self, forum_thread_listing.user, forum_thread_listing.mode) %>
       </div>
+
       <div class="attributions">Attributions:
         <%= render partial: "forum_threads/icon_allowed", object: forum_thread_listing %>
       </div>
-      <div class="updated">Last Updated: <%= time_ago_in_words(forum_thread_listing.updated_at) %></div>
+
+      <div class="updated">
+        Last Updated: <%= time_ago_in_words(forum_thread_listing.updated_at) %>
+      </div>
+
       <div class="replies">
-      <%= link_to forum_thread_listing.posts.count.to_s + " Replies", forum_thread_listing %>
+        <%= link_to forum_thread_listing.posts.count.to_s + " Replies", forum_thread_listing %>
       </div>
+
       <div class="postID">
-        <%= forum_thread_listing.id %>
+        Post <%= forum_thread_listing.id %>
       </div>
+
     </div>
  </div>
 </div>

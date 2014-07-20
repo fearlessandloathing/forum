@@ -5,17 +5,32 @@
 body {
 	margin-top: 60px;
 }
-.updated {
+.author {
+	width: auto;
 	display: inline;
-
+	margin-right: 5%;
 }
 .attributions {
+	width: auto;
 	display: inline;
+	margin-right: 5%;
 }
 .attributionicon {
 	width: 1em;
 	height: auto;
 }
-.replies {
+.updated {
+	width: auto;
 	display: inline;
+	margin-right: 5%;
+}
+.replies {
+	width: auto;
+	display: inline;
+	margin-right: 5%;
+}
+.postID {
+	width: auto;
+	float: right;
+	color: #c4c4c4;
 }
