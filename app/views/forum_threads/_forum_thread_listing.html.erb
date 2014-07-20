@@ -21,7 +21,8 @@
       </div>
 
       <div class="replies">
-        <%= link_to forum_thread_listing.posts.count.to_s + " Replies", forum_thread_listing %>
+        <% posts = forum_thread_listing.posts[1..forum_thread_listing.posts.length]%>
+        <%= link_to pluralize(posts.count, "Reply"), forum_thread_listing %>
       </div>
 
       <div class="postID">
