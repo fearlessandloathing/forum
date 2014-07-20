@@ -17,8 +17,12 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :name
   validates_uniqueness_of :pseudonym
 
-  validates_format_of :email, :with => /\w@oberlin\.edu/, :message => "must be an oberlin.edu email"
-  validates_format_of :pseudonym, :with => /\A[A-Za-z\d_]+\z/, :message => "should be alphanumeric + _"
+  #validates_format_of :email, :with => /\w@oberlin\.edu/, :message => "must be an oberlin.edu email"
+  #validates_format_of :pseudonym, :with => /\A[A-Za-z\d_]+\z/, :message => "should be alphanumeric + _"
+  
+  # For the beta only:
+  validates_format_of :email, :with => /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/, :message => "must be an oberlin.edu email"
+  validates_format_of :pseudonym, :with => /\A[A-Z a-z\d_]+\z/, :message => "should be alphanumeric + _"
 
   validates_length_of :password, :minimum => 6
 
