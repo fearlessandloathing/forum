@@ -1,5 +1,6 @@
 Flforum::Application.routes.draw do
 
+  get "landingpage/index"
   get "moderation/index"
   get "pseudonym/show"
   root :to => "forum_threads#index"
