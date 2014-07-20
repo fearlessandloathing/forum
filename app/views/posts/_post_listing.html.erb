@@ -5,7 +5,12 @@
 	</div>
 
 	<div class="panel-footer">
+    <div class="author">
       <%= ApplicationHelper.user_short_link(self, post_listing.user, post_listing.mode) %>
       posted this <%= time_ago_in_words post_listing.updated_at%>
+    </div>
+    <div class="postID">
+      <%= post_listing.id %>
+    </div>
 	</div>
 </div>
