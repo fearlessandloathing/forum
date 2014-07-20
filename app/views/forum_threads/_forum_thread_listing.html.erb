@@ -8,8 +8,7 @@
     <div class="panel-footer">
 
       <div class="author">
-        <%= link_to "Reply", new_forum_thread_post_path(forum_thread_listing)%>
-        to <%= ApplicationHelper.user_short_link(self, forum_thread_listing.user, forum_thread_listing.mode) %>
+        By <%= ApplicationHelper.user_short_link(self, forum_thread_listing.user, forum_thread_listing.mode) %>
       </div>
 
       <div class="attributions">Attributions:
