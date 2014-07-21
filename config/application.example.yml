@@ -9,6 +9,7 @@
 #
 MANDRILL_USERNAME: Your_Username
 MANDRILL_API_KEY: Your_API_Key
+HOST: yourhosthere.com
 ADMIN_NAME: First User
 ADMIN_EMAIL: user@example.com
 ADMIN_PASSWORD: changeme
