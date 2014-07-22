@@ -1,7 +1,7 @@
-// Place all the styles related to the home controller here.
+// Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#user_remember_me {
-	margin-bottom: 1em;
+#post_mode {
+	margin-bottom: .5em;
 }

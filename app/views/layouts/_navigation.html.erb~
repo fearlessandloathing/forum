@@ -17,7 +17,7 @@
 
   <% if user_signed_in? %>
   <li>
-    <%= link_to 'Create New Post', new_forum_thread_path %>
+    <%= link_to 'Create Thread', new_forum_thread_path, :class => 'highlight' %>
   </li>
     <li>
       <%= link_to current_user.name, edit_user_registration_path %>

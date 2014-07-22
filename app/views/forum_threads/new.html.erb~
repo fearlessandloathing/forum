@@ -1,5 +1,9 @@
-<h1>New Post</h1>
+<div class="col-md-11 col-md-offset-1">
+
+<h1>New Thread</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', forum_threads_path %>
+<%= link_to 'Back to Forum', forum_threads_path %>
+
+</div>

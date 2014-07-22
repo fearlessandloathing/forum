@@ -1,0 +1,9 @@
+<div class="col-md-11 col-md-offset-1">
+
+<h1>New Comment</h1>
+
+<%= render 'form' %
+
+<%= link_to 'Back to Thread', forum_thread_posts_path(@forum_thread) %>
+
+</div>

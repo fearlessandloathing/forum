@@ -1,0 +1,32 @@
+<div class="post">
+  <div class="panel panel-default">
+    <a href="<%= url_for forum_thread_listing %>">
+        <div class="panel-body">
+          <%= forum_thread_listing.body %>
+        </div>
+    </a>
+    <div class="panel-footer">
+
+      <div class="author">
+        By <%= ApplicationHelper.user_short_link(self, forum_thread_listing.user, forum_thread_listing.mode) %>
+      </div>
+
+      <div class="attributions">Attributions:
+        <%= render partial: "forum_threads/icon_allowed", object: forum_thread_listing %>
+      </div>
+
+      <div class="updated">
+        Last Updated: <%= time_ago_in_words(forum_thread_listing.updated_at) %>
+      </div>
+
+      <div class="comments">
+        <%= link_to forum_thread_listing.posts.count.to_s + " Comments", forum_thread_listing %>
+      </div>
+
+      <div class="postID">
+        Post <%= forum_thread_listing.id %>
+      </div>
+
+    </div>
+ </div>
+</div>
