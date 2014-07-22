@@ -1,3 +1,68 @@
+<form class="form-horizontal" role="form">
+
+<fieldset>
+  <legend>Body</legend>
+	<textarea rows="3" class="col-md-6"></textarea>
+</fieldset>
+
+<fieldset>
+
+  <legend>Allowed Attributions:</legend>
+
+	<div class="checkbox">
+	  <label>
+	    <input type="checkbox" value="">
+	    Real Names
+	  </label>
+	</div>
+
+	<div class="checkbox">
+	  <label>
+	    <input type="checkbox" value="">
+	    Pseudonyms
+	  </label>
+	</div>
+
+	<div class="checkbox">
+	  <label>
+	    <input type="checkbox" value="">
+	    Anonymous
+	  </label>
+	</div>
+
+</fieldset>
+
+<fieldset>
+
+  <legend>Your Attribution:</legend>
+
+	<div class="radio">
+	  <label>
+	    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+	    Real Name
+	  </label>
+	</div>
+
+	<div class="radio">
+	  <label>
+	    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+	    Pseudonym
+	  </label>
+	</div>
+
+	<div class="radio">
+	  <label>
+	    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+	    Anonymous
+	  </label>
+	</div>
+
+</fieldset>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
 
 <%= bootstrap_form_for(@forum_thread, :html => {:class => "form-horizontal"}) do |f| %>
   <%= f.text_area :body, cols: 40, rows: 10 %>
