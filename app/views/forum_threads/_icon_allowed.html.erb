@@ -1,13 +1,12 @@
 
 
 
-<!-- What posts are allowed, use icon-user, icon-cog, icon-empty-star -->
 <% if icon_allowed.real_allowed %>
-  <%= image_tag "real.svg", class: "attributionicon" %>
+  <%= image_tag "real.svg", class: "attributionicon", alt: "Real name allowed" %>
 <% end %>
 <% if icon_allowed.pseudo_allowed %>
-  <%= image_tag "pseudo.svg", class: "attributionicon" %>
+  <%= image_tag "pseudo.svg", class: "attributionicon", alt: "Pseudonyms allowed" %>
 <% end %>
 <% if icon_allowed.anon_allowed %>
-  <%= image_tag "anon.svg", class: "attributionicon" %>
+  <%= image_tag "anon.svg", class: "attributionicon", alt: "Anonmyous allowed" %>
 <% end %>
