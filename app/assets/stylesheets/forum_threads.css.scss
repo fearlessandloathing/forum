@@ -30,7 +30,6 @@ body {
 .comments {
 	width: auto;
 	display: inline;
-	margin-right: 5%;
 	white-space:nowrap;
 }
 .postID {
@@ -38,4 +37,8 @@ body {
 	float: right;
 	color: #c4c4c4;
 	white-space:nowrap;
+}
+
+#forum_thread_mode {
+	margin-bottom: 1em;
 }
