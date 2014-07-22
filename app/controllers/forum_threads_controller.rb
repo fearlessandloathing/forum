@@ -16,7 +16,7 @@ class ForumThreadsController < ApplicationController
 
   # GET /forum_threads/new
   def new
-    @forum_thread = ForumThread.new
+    @forum_thread = ForumThread.new(mode: :real)
   end
 
   # GET /forum_threads/1/edit

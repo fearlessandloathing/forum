@@ -43,6 +43,14 @@ class ForumThread < ActiveRecord::Base
     return modes
   end
 
+  def radio_form_modes
+    modes = {}
+    modes["Real name"] = "real" if real_allowed
+    modes["Pseudonym"] = "pseudo" if pseudo_allowed
+    modes["Anonymous"] = "anon" if anon_allowed
+    return modes
+  end
+
   def as_post
     post = OpenStruct.new
     post.user = user

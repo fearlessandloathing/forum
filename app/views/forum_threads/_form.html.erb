@@ -66,10 +66,31 @@
 
 <%= bootstrap_form_for(@forum_thread, :html => {:class => "form-horizontal"}) do |f| %>
   <%= f.text_area :body, cols: 40, rows: 10 %>
-  <%= f.check_box :real_allowed, label: image_tag("real.svg") + " Real names allowed" %>
-  <%= f.check_box :pseudo_allowed, label: image_tag("pseudo.svg") + " Pseudonyms allowed"%>
-  <%= f.check_box :anon_allowed, label: image_tag("anon.svg") + " Anonymous posts allowed"%>
-  <%= f.select :mode, @forum_thread.form_modes%>
+  <fieldset>
+
+  <legend>Allowed Attributions:</legend>
+
+    <%= f.check_box :real_allowed, label: image_tag("real.svg", class: "attributionicon") + " Real names" %>
+    <%= f.check_box :pseudo_allowed, label: image_tag("pseudo.svg", class: "attributionicon") + " Pseudonyms"%>
+    <%= f.check_box :anon_allowed, label: image_tag("anon.svg", class: "attributionicon") + " Anonymous posts"%>
+
+  </fieldset>
+  <%# f.select :mode, @forum_thread.form_modes%>
+
+
+  <fieldset>
+
+    <legend>Your Attribution:</legend>
+
+    <%# f.radio_buttons :mode, @forum_thread.radio_form_modes, label: false, checked: true %>
+    
+    <% first = true %>
+    <%- @forum_thread.form_modes.each do |mode| %>
+      <%= f.radio_button :mode, mode.last, check: first %>
+      <%= f.label :mode, image_tag(mode.last + ".svg", class: "attributionicon") + " " + mode.first, value: mode.last %>
+      <% first = false %>
+    <% end %>
+  </fieldset>
   <div class="actions form-actions">
     <%= f.submit "Create thread" %>
   </div>
