@@ -1,12 +1,74 @@
+<form class="form-horizontal" action="/forum_threads" role="form">
+
+<fieldset class="col-md-6">
+  <legend>Body</legend>
+	<textarea id="forum_thread_body" name="forum_thread[body]" required="requried" rows="9" class="col-md-12"></textarea>
+</fieldset>
+
+<fieldset class="col-md-6">
+
+  <legend>Allowed Attributions:</legend>
+
+	<div class="checkbox">
+	  <label>
+	    <input type="checkbox" value="">
+	    Real Name <img src="../assets/real.svg" class="attributionicon" />
+	  </label>
+	</div>
+
+	<div class="checkbox">
+	  <label>
+	    <input type="checkbox" value="">
+	    Pseudonym <img src="../assets/pseudo.svg" class="attributionicon" />
+	  </label>
+	</div>
+
+	<div class="checkbox">
+	  <label>
+	    <input type="checkbox" value="">
+	    Anonymous <img src="../assets/anon.svg" class="attributionicon" />
+	  </label>
+	</div>
+
+  <legend>Your Attribution:</legend>
+
+	<div class="radio">
+	  <label>
+	    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+	    Real Name <img src="../assets/real.svg" class="attributionicon" />
+	  </label>
+	</div>
+
+	<div class="radio">
+	  <label>
+	    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+	    Pseudonym <img src="../assets/pseudo.svg" class="attributionicon" />
+	  </label>
+	</div>
+
+	<div class="radio">
+	  <label>
+	    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+	    Anonymous <img src="../assets/anon.svg" class="attributionicon" />
+	  </label>
+	</div>
+
+</fieldset>
+
+<button type="submit" class="btn btn-primary col-md-12">Create Thread</button>
+
+</form>
+
+<br>
 
 <%= bootstrap_form_for(@forum_thread, :html => {:class => "form-horizontal"}) do |f| %>
-  <%= f.text_area :body, cols: 20, rows: 20 %>
-  <%= f.check_box :real_allowed%>
-  <%= f.check_box :pseudo_allowed%>
-  <%= f.check_box :anon_allowed%>
-  <%= f.select :mode, @forum_thread.modes%>
+  <%= f.text_area :body, cols: 40, rows: 10 %>
+  <%= f.check_box :real_allowed, label: image_tag("real.svg") + " Real names allowed" %>
+  <%= f.check_box :pseudo_allowed, label: image_tag("pseudo.svg") + " Pseudonyms allowed"%>
+  <%= f.check_box :anon_allowed, label: image_tag("anon.svg") + " Anonymous posts allowed"%>
+  <%= f.select :mode, @forum_thread.form_modes%>
   <div class="actions form-actions">
-    <%= f.submit %>
+    <%= f.submit "Create thread" %>
   </div>
 <% end %>
 

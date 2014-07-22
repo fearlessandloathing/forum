@@ -1,0 +1,40 @@
+// Place all the styles related to the ForumThreads controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//
+body {
+	margin-top: 60px;
+}
+.author {
+	width: auto;
+	display: inline;
+	margin-right: 5%;
+	white-space: nowrap;
+}
+.attributions {
+	width: auto;
+	display: inline;
+	margin-right: 5%;
+	white-space:nowrap;
+}
+.attributionicon {
+	width: 1em;
+	height: auto;
+}
+.updated {
+	width: auto;
+	display: inline;
+	margin-right: 5%;
+	white-space:nowrap;
+}
+.comments {
+	width: auto;
+	display: inline;
+	white-space:nowrap;
+}
+.postID {
+	width: auto;
+	float: right;
+	color: #c4c4c4;
+	white-space:nowrap;
+}
