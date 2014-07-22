@@ -76,3 +76,9 @@ pickle-email-*.html
 
 # Ignore application configuration
 /config/application.yml
+
+# Contains local config stuff for vagrant.
+/.vagrant/
+
+# Contains the compiled sources for ruby. Not checked in.
+/deploy/vendor/ruby-2.1.2/

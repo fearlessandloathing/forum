@@ -3,11 +3,11 @@
 
 <!-- What posts are allowed, use icon-user, icon-cog, icon-empty-star -->
 <% if icon_allowed.real_allowed %>
-  <img src="/assets/real.svg" class="attributionicon" />
+  <%= image_tag "real.svg", class: "attributionicon" %>
 <% end %>
 <% if icon_allowed.pseudo_allowed %>
-  <img src="/assets/pseudo.svg" class="attributionicon" />
+  <%= image_tag "pseudo.svg", class: "attributionicon" %>
 <% end %>
 <% if icon_allowed.anon_allowed %>
-  <img src="/assets/anon.svg" class="attributionicon" />
+  <%= image_tag "anon.svg", class: "attributionicon" %>
 <% end %>
