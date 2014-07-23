@@ -20,9 +20,9 @@
     <% first = true %>
     <%- @forum_thread.form_modes.each do |mode| %>
       <div class="radiobuttons">
-      <%= f.radio_button :mode, mode.last, check: first %>
-      <%= f.label :mode, image_tag(mode.last + ".svg", class: "attributionicon") + " " + mode.first, value: mode.last %>
-      <% first = false %>
+        <%= f.radio_button :mode, mode.last, check: first %>
+        <%= f.label :mode, image_tag(mode.last + ".svg", class: "attributionicon") + " " + mode.first, value: mode.last %>
+        <% first = false %>
       </div>
     <% end %>
   </fieldset>
