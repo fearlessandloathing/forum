@@ -1,6 +1,9 @@
 <%= bootstrap_form_for(@forum_thread, :html => {:class => "form-inline"}) do |f| %>
  
- <%= f.text_area :body, rows: 10, class: "col-md-6" %>
+  <fieldset class="col-md-12">
+    <legend>Body</legend>
+    <%= f.text_area :body, rows: 10, class: "col-md-6", label: false %>
+  </fieldset>
  
  <fieldset class="col-md-12">
 
