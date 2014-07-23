@@ -39,11 +39,11 @@ legend {
     padding: 0;
     width: 100%;
 }
-/*
+
 fieldset {
 	padding-bottom: 1em;
 }
-*/
+
 label {
     display: inline-block;
     font-weight: normal;
