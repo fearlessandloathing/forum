@@ -37,7 +37,7 @@ class ForumThread < ActiveRecord::Base
 
   def form_modes
     modes = []
-    modes << ["Real name", "real"] if real_allowed
+    modes << ["Real Name", "real"] if real_allowed
     modes << ["Pseudonym", "pseudo"] if pseudo_allowed
     modes << ["Anonymous", "anon"] if anon_allowed
     return modes
@@ -45,7 +45,7 @@ class ForumThread < ActiveRecord::Base
 
   def radio_form_modes
     modes = {}
-    modes["Real name"] = "real" if real_allowed
+    modes["Real Name"] = "real" if real_allowed
     modes["Pseudonym"] = "pseudo" if pseudo_allowed
     modes["Anonymous"] = "anon" if anon_allowed
     return modes
