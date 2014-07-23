@@ -1,11 +1,13 @@
 <%= bootstrap_form_for(@forum_thread, :html => {:class => "form-inline"}) do |f| %>
  
-  <fieldset class="col-md-12">
-    <legend>Body</legend>
+  <fieldset class="">
+    <legend>Body:</legend>
     <%= f.text_area :body, rows: 10, class: "col-md-6", label: false %>
+
+    <textarea class="col-md-6" rows="10" placeholder="Post Preview"></textarea>
   </fieldset>
  
- <fieldset class="col-md-12">
+ <fieldset class="">
 
   <legend>Allowed Attributions:</legend>
 
@@ -29,6 +31,7 @@
       </div>
     <% end %>
   </fieldset>
+  <br>
   <div class="actions form-actions">
     <%= f.submit "Create Thread", class: "col-md-6 btn btn-primary"%>
   </div>
