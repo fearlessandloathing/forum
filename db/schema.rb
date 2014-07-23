@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140720202629) do
+ActiveRecord::Schema.define(version: 20140723051722) do
 
   create_table "complaints", force: true do |t|
     t.integer  "user_id"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20140720202629) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "forum_thread_id"
+    t.text     "body_markdown"
   end
 
   create_table "roles", force: true do |t|
