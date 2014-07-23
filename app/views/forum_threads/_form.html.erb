@@ -1,12 +1,15 @@
 <%= bootstrap_form_for(@forum_thread, :html => {:class => "form-inline"}) do |f| %>
  
- <%= f.text_area :body, rows: 10, class: "col-md-6" %>
+  <fieldset class="col-md-12">
+    <legend>Body</legend>
+    <%= f.text_area :body, rows: 10, class: "col-md-6", label: false %>
+  </fieldset>
  
  <fieldset class="col-md-12">
 
   <legend>Allowed Attributions:</legend>
 
-    <%= f.check_box :real_allowed, label: image_tag("real.svg", class: "attributionicon") + " Real name" %>
+    <%= f.check_box :real_allowed, label: image_tag("real.svg", class: "attributionicon") + " Real Name" %>
     <%= f.check_box :pseudo_allowed, label: image_tag("pseudo.svg", class: "attributionicon") + " Pseudonym"%>
     <%= f.check_box :anon_allowed, label: image_tag("anon.svg", class: "attributionicon") + " Anonymous"%>
 
