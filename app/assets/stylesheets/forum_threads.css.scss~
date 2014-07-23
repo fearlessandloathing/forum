@@ -38,3 +38,10 @@ body {
 	color: #c4c4c4;
 	white-space:nowrap;
 }
+legend {
+	margin-top: 1em;
+}
+fieldset {
+	padding-bottom: 1em;
+}
+
