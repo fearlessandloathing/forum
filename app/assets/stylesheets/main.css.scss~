@@ -40,13 +40,12 @@ legend {
     width: 100%;
 }
 
-fieldset {
-	padding-bottom: 1em;
-}
-
 label {
     display: inline-block;
     font-weight: normal;
     margin-bottom: 0px;
     max-width: 100%;
+}
+button[value="Create Thread"] {
+	margin-top: 1em;
 }

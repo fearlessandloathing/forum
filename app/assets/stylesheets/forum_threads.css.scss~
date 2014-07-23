@@ -41,7 +41,7 @@ body {
 legend {
 	margin-top: 1em;
 }
-fieldset {
-	padding-bottom: 1em;
+button[value="Create Thread"] {
+	margin-top: 1em;
 }
 

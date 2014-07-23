@@ -3,7 +3,7 @@
 <h1>New Thread</h1>
 
 <%= render 'form' %>
-<br>
-<%= link_to 'Back to Forum', forum_threads_path %>
+<br><br>
+<%= link_to 'Back to Forum', forum_threads_path class: "col-md-12" %>
 
 </div>
