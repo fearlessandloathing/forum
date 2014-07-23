@@ -4,7 +4,7 @@
     <legend>Body:</legend>
     <%= f.text_area :body, rows: 10, class: "col-md-6", label: false %>
 
-    <textarea class="col-md-6" rows="10"></textarea>
+    <textarea class="col-md-6" rows="10" placeholder="Post Preview"></textarea>
   </fieldset>
  
  <fieldset class="">
@@ -33,7 +33,7 @@
   </fieldset>
   <br>
   <div class="actions form-actions">
-    <%= f.submit "Create Thread", class: "col-md-6 btn btn-primary"%>
+    <%= f.submit "Create Thread", class: "col-md-6 col-md-offset-3 btn btn-primary"%>
   </div>
 
 <% end %>
