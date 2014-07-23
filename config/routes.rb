@@ -3,7 +3,11 @@ Flforum::Application.routes.draw do
   get "landingpage/index"
   get "moderation/index"
   get "pseudonym/show"
-  root :to => "forum_threads#index"
+  authenticated :user do
+    root :to => "forum_threads#index", as: :authenticated_root
+  end
+  root :to => "landingpage#index"
+
   devise_scope :user do
     get "/users/confirm", to: "registrations#confirm"
   end
