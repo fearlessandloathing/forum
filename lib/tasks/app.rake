@@ -6,7 +6,7 @@ namespace :app do
     Post.all.each do |p|
       print "Processing: " + p.id.to_s + "\r"
       $stdout.flush
-      p.save!
+      p.update_record_without_timestamping
       i += 1
     end
 

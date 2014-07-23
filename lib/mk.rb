@@ -9,7 +9,8 @@ class MK
     )
     options.reject! { |k, v| !v }
     r = Redcarpet::Render::HTML.new(escape_html: true,
-                                    with_toc_data: true)
+                                    with_toc_data: true,
+                                   xhtml: true)
     Redcarpet::Markdown.new(r, options).render(text)
   end
 end
