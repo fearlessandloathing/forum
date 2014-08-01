@@ -7,6 +7,8 @@
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
+<link rel="stylesheet" href="http://lab.lepture.com/editor/editor.css" />
+<script type="text/javascript" src="http://lab.lepture.com/editor/editor.js"></script>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
     <div class="navbar navbar-default navbar-fixed-top">
