@@ -26,6 +26,7 @@
 
       <div class="postID">
         Thread <%= forum_thread_listing.id %>
+        <%= link_to "Complain", complain_forum_thread_post_path(forum_thread_listing, forum_thread_listing.posts.first)%>
       </div>
 
     </div>

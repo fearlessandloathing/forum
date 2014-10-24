@@ -14,11 +14,6 @@
     </td>
 
     <td>
-      <% if complainable.is_a? Thread %>
-        <h1>
-          <%= complainable.title %>
-        </h1>
-      <% end %>
       <%= complainable.body %>
     </td>
 
@@ -30,6 +25,9 @@
           </li>
         <% end %>
       </ul>
+    </td>
+    <td style="width: 150px">
+      Punishment options here?
     </td>
   </tr>
 
