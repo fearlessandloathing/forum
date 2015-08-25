@@ -1,6 +1,4 @@
 <%= bootstrap_form_for(@forum_thread, :html => {:class => "form-inline"}) do |f| %>
- <script>var editor = new Editor();
-editor.render();</script>
   <fieldset class="">
     <legend>Body:</legend>
     <%= f.text_area :body, rows: 10, class: "col-md-6", label: false %>
@@ -37,12 +35,5 @@ editor.render();</script>
 
 <% end %>
 
-<!-- <link rel="stylesheet" href="http://lab.lepture.com/editor/editor.css" />
-<script type="text/javascript" src="http://lab.lepture.com/editor/editor.js"></script> -->
 
-<% content_for :javascript do %>
-jQuery(function() {
-  var editor = new Editor();
-  editor.render();
-});
-<% end %>
+
